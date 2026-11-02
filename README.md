@@ -42,8 +42,9 @@ install Firmafakta, or Firmafakta Free without an account.
 **ChatGPT and Codex:** add the plugin marketplace `firmafakta/mcp`, then install Firmafakta, or
 Firmafakta Free without an account.
 
-**Cursor:** add the marketplace `firmafakta/mcp`, then install Firmafakta, or Firmafakta Free
-without an account.
+**Cursor** (Teams and Enterprise): an admin imports the marketplace `firmafakta/mcp` from GitHub
+under Dashboard → Plugins & MCPs; then install Firmafakta, or Firmafakta Free without an account,
+under Customize.
 
 ## Connect without a plugin
 
@@ -66,9 +67,12 @@ For agents that cannot sign in with OAuth: create a key under My account on
 | `firmafakta_count` | Counts a segment and reads it back in words |
 | `firmafakta_fetch` | Fetches a segment's companies or workplaces, a page at a time |
 | `firmafakta_lookup` | Everything on one company, by organisation number |
+| `firmafakta_annual_report` | A company's annual report from Bolagsverket as one PDF, for credits (Firmafakta only) |
 | `firmafakta_company` | A company as the public company page shows it, by organisation number or name, free |
 | `firmafakta_save` | Saves a segment to your account (Firmafakta only) |
 | `firmafakta_load` | Lists or loads saved segments (Firmafakta only) |
+| `firmafakta_update` | Renames a saved segment or replaces its expression (Firmafakta only) |
+| `firmafakta_delete` | Deletes a saved segment (Firmafakta only) |
 
 Counting and fetching cost credits, the same credits as on the web; `firmafakta_describe` tells
 the assistant the prices, so it can ask you before it spends. Sole proprietorships are counted but

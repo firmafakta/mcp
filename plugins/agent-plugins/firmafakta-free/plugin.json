@@ -1,7 +1,7 @@
 {
   "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
   "name": "firmafakta-free",
-  "version": "1.8.75",
+  "version": "1.8.77",
   "description": "Swedish company data without an account: count companies by industry, place and size, fetch small lists and look up any company by organisation number.",
   "author": {
     "name": "Firmafakta",
