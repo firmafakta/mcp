@@ -1,0 +1,21 @@
+{
+  "name": "firmafakta-free",
+  "displayName": "Firmafakta Free",
+  "version": "1.8.72",
+  "description": "Swedish company data without an account: count companies by industry, place and size, fetch small lists and look up any company by organisation number.",
+  "author": {
+    "name": "Firmafakta",
+    "email": "support@firmafakta.se"
+  },
+  "homepage": "https://firmafakta.se/en/ai/",
+  "repository": "https://github.com/firmafakta/mcp",
+  "license": "MIT",
+  "logo": "assets/icon.png",
+  "keywords": [
+    "sweden",
+    "companies",
+    "company data",
+    "business register"
+  ],
+  "mcpServers": "./mcp.json"
+}

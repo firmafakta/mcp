@@ -1,0 +1,8 @@
+{
+  "mcpServers": {
+    "firmafakta-free": {
+      "type": "http",
+      "url": "https://mcp.firmafakta.se/free"
+    }
+  }
+}

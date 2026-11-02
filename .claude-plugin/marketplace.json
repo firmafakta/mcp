@@ -7,9 +7,15 @@
   "description": "Firmafakta's plugins for AI assistants.",
   "plugins": [
     {
+      "name": "firmafakta-free",
+      "source": "./plugins/claude/firmafakta-free",
+      "description": "Swedish company data without an account: count companies by industry, place and size, fetch small lists and look up any company by organisation number.",
+      "version": "1.8.72"
+    },
+    {
       "name": "firmafakta",
       "source": "./plugins/claude/firmafakta",
-      "description": "Swedish company data: segment companies by industry, place and size, and look up any company by organisation number. Free without an account; log in for more.",
+      "description": "Swedish company data: segment companies by industry, place and size, and look up any company by organisation number. Sign in with your Firmafakta account.",
       "version": "1.8.72"
     }
   ]

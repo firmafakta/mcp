@@ -1,7 +1,7 @@
 {
   "name": "firmafakta",
   "version": "1.8.72",
-  "description": "Swedish company data: segment companies by industry, place and size, and look up any company by organisation number. Free without an account; log in for more.",
+  "description": "Swedish company data: segment companies by industry, place and size, and look up any company by organisation number. Sign in with your Firmafakta account.",
   "author": {
     "name": "Firmafakta",
     "email": "support@firmafakta.se",

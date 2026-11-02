@@ -8,9 +8,14 @@
   },
   "plugins": [
     {
+      "name": "firmafakta-free",
+      "source": "./plugins/cursor/firmafakta-free",
+      "description": "Swedish company data without an account: count companies by industry, place and size, fetch small lists and look up any company by organisation number."
+    },
+    {
       "name": "firmafakta",
       "source": "./plugins/cursor/firmafakta",
-      "description": "Swedish company data: segment companies by industry, place and size, and look up any company by organisation number. Free without an account; log in for more."
+      "description": "Swedish company data: segment companies by industry, place and size, and look up any company by organisation number. Sign in with your Firmafakta account."
     }
   ]
 }
