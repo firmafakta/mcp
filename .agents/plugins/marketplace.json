@@ -5,6 +5,18 @@
   },
   "plugins": [
     {
+      "name": "firmafakta-free",
+      "source": {
+        "source": "local",
+        "path": "./plugins/agent-plugins/firmafakta-free"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_USE"
+      },
+      "category": "Business & Operations"
+    },
+    {
       "name": "firmafakta",
       "source": {
         "source": "local",

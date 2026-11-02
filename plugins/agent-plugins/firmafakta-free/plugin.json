@@ -1,0 +1,45 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
+  "name": "firmafakta-free",
+  "version": "1.8.72",
+  "description": "Swedish company data without an account: count companies by industry, place and size, fetch small lists and look up any company by organisation number.",
+  "author": {
+    "name": "Firmafakta",
+    "email": "support@firmafakta.se",
+    "url": "https://firmafakta.se/"
+  },
+  "homepage": "https://firmafakta.se/en/ai/",
+  "repository": "https://github.com/firmafakta/mcp",
+  "license": "MIT",
+  "keywords": [
+    "sweden",
+    "companies",
+    "company data",
+    "prospecting",
+    "business register",
+    "SCB",
+    "Bolagsverket"
+  ],
+  "extensions": {
+    "com.openai": {
+      "interface": {
+        "displayName": "Firmafakta Free",
+        "shortDescription": "Swedish company data, no account",
+        "longDescription": "Firmafakta Free gives ChatGPT the Swedish company registers without an account: Statistics Sweden's business register (SCB) and annual reports from Bolagsverket.\n\nDescribe the companies you want in plain language, such as \"construction companies in Halland with 10 to 49 employees\". ChatGPT finds the industry and region codes and counts the segment, and can fetch a short list or look up a single company by organisation number.\n\nWithout an account you get 10 credits a month. A free account at firmafakta.se gives 100 a month and lets you save segments; install the Firmafakta plugin and sign in for that.\n\nSole proprietorships are counted but never listed. Every tool is read-only.",
+        "developerName": "Firmafakta",
+        "category": "Business & Operations",
+        "capabilities": [],
+        "websiteURL": "https://firmafakta.se/en/ai/",
+        "supportURL": "https://firmafakta.se/en/om/",
+        "privacyPolicyURL": "https://firmafakta.se/en/integritet/",
+        "termsOfServiceURL": "https://firmafakta.se/en/villkor/",
+        "defaultPrompt": [
+          "How many construction companies with 10 to 49 employees are there in Halland?",
+          "Look up the company with organisation number 556016-0680."
+        ],
+        "logo": "./assets/icon.png",
+        "composerIcon": "./assets/icon.png"
+      }
+    }
+  }
+}
