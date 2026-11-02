@@ -1,7 +1,7 @@
 {
   "name": "firmafakta-free",
   "displayName": "Firmafakta Free",
-  "version": "1.8.72",
+  "version": "1.8.75",
   "description": "Swedish company data without an account: count companies by industry, place and size, fetch small lists and look up any company by organisation number.",
   "author": {
     "name": "Firmafakta",

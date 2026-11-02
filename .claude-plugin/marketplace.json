@@ -10,13 +10,13 @@
       "name": "firmafakta-free",
       "source": "./plugins/claude/firmafakta-free",
       "description": "Swedish company data without an account: count companies by industry, place and size, fetch small lists and look up any company by organisation number.",
-      "version": "1.8.72"
+      "version": "1.8.75"
     },
     {
       "name": "firmafakta",
       "source": "./plugins/claude/firmafakta",
       "description": "Swedish company data: segment companies by industry, place and size, and look up any company by organisation number. Sign in with your Firmafakta account.",
-      "version": "1.8.72"
+      "version": "1.8.75"
     }
   ]
 }

@@ -2,23 +2,30 @@
 
 # Firmafakta MCP
 
-A remote MCP server over the Swedish company registers (SCB, Bolagsverket, PRV). Your AI
+Hosted MCP servers over the Swedish company registers (SCB, Bolagsverket, PRV). Your AI
 assistant counts and lists companies by industry, place and size, and looks up single companies
 by organisation number.
 
-```
-https://mcp.firmafakta.se
-```
+This repository holds the metadata and plugins for two hosted MCP connections, and the plugin
+marketplace that installs them. The servers themselves are not open source; the license covers
+the contents of this repository.
 
-You need a Firmafakta account; the free plan is enough to try it. Sign in with OAuth when your
-client asks, or send an API key (see below). This repository holds the listing metadata and these
-instructions; the server itself is not open source.
+| Connection | Address | Login | For |
+|---|---|---|---|
+| **Firmafakta** | `https://mcp.firmafakta.se` | your Firmafakta account (OAuth or API key) | the full service; a free account gives 100 credits a month and saved segments, a paid plan more |
+| **Firmafakta Free** | `https://mcp.firmafakta.se/free` | none | a limited first look without an account: 10 credits a month and a small daily quota of free company lookups |
 
 ## Install as a plugin
 
-This repository is also a plugin marketplace. The Firmafakta plugin brings two servers: a free
-one you can use at once, without an account (10 credits a month), and your account's, which you
-log in to when you want more (a free account gives 100 a month).
+The marketplace `firmafakta/mcp` has one plugin per connection:
+
+- **Firmafakta** (`firmafakta`): the full service on your Firmafakta account,
+  `https://mcp.firmafakta.se`. You log in the first time you use it; an account is free to create
+  and gives 100 credits a month, and a paid plan gives more.
+- **Firmafakta Free** (`firmafakta-free`): basic exploration without an account,
+  `https://mcp.firmafakta.se/free`. Limited to 10 credits a month and a small daily quota of free
+  company lookups. For more credits and saved segments, use the Firmafakta plugin with a free
+  account.
 
 **Claude Code:**
 
@@ -27,41 +34,22 @@ log in to when you want more (a free account gives 100 a month).
 /plugin install firmafakta@firmafakta
 ```
 
-**Claude** (claude.ai, Desktop): add the marketplace `firmafakta/mcp` under
-Customize, then install Firmafakta.
+Without an account: `/plugin install firmafakta-free@firmafakta`.
 
-**ChatGPT and Codex:** add the plugin marketplace `firmafakta/mcp`, then install
-Firmafakta.
+**Claude** (claude.ai, Desktop): add the marketplace `firmafakta/mcp` under Customize, then
+install Firmafakta, or Firmafakta Free without an account.
 
-**Cursor:** add the marketplace `firmafakta/mcp`, then install Firmafakta.
+**ChatGPT and Codex:** add the plugin marketplace `firmafakta/mcp`, then install Firmafakta, or
+Firmafakta Free without an account.
 
-The free server is `https://mcp.firmafakta.se/free`; it needs no login.
+**Cursor:** add the marketplace `firmafakta/mcp`, then install Firmafakta, or Firmafakta Free
+without an account.
 
-## Install
+## Connect without a plugin
 
-**Claude** (claude.ai, Desktop, mobile): [add Firmafakta as a connector](https://claude.ai/customize/connectors?modal=add-custom-connector&connectorName=Firmafakta&connectorUrl=https%3A%2F%2Fmcp.firmafakta.se), then sign in and approve.
-
-**Claude Code:**
-
-```sh
-claude mcp add --transport http firmafakta https://mcp.firmafakta.se
-```
-
-**Cursor:** [add to Cursor](https://cursor.com/en/install-mcp?name=firmafakta&config=eyJ1cmwiOiJodHRwczovL21jcC5maXJtYWZha3RhLnNlIn0%3D)
-
-**VS Code:**
-
-```sh
-code --add-mcp '{"name":"firmafakta","type":"http","url":"https://mcp.firmafakta.se"}'
-```
-
-**ChatGPT:** under Plugins or Apps, click **+** and choose Add custom MCP server with the address above. What your plan allows,
-and whether developer mode must be on, is in
-[OpenAI's help article](https://help.openai.com/en/articles/12584461-developer-mode-and-mcp-apps-in-chatgpt).
-
-**Other clients:** add a remote (Streamable HTTP) MCP server with the address above.
-
-Step by step: [firmafakta.se/en/ai](https://firmafakta.se/en/ai/).
+Add Firmafakta as a remote (Streamable HTTP) MCP server with the address
+`https://mcp.firmafakta.se` and sign in with your Firmafakta account when your client asks.
+Step by step per assistant: [firmafakta.se/en/ai](https://firmafakta.se/en/ai/).
 
 ## API key
 
@@ -79,8 +67,8 @@ For agents that cannot sign in with OAuth: create a key under My account on
 | `firmafakta_fetch` | Fetches a segment's companies or workplaces, a page at a time |
 | `firmafakta_lookup` | Everything on one company, by organisation number |
 | `firmafakta_company` | A company as the public company page shows it, by organisation number or name, free |
-| `firmafakta_save` | Saves a segment to your account |
-| `firmafakta_load` | Lists or loads saved segments |
+| `firmafakta_save` | Saves a segment to your account (Firmafakta only) |
+| `firmafakta_load` | Lists or loads saved segments (Firmafakta only) |
 
 Counting and fetching cost credits, the same credits as on the web; `firmafakta_describe` tells
 the assistant the prices, so it can ask you before it spends. Sole proprietorships are counted but
@@ -90,7 +78,7 @@ never listed.
 
 - How many construction companies with 10 to 49 employees are there in Halland?
 - Find all accounting firms in Gothenburg municipality and give me the list.
-- Same again, but only the ones started in the last five years.
+- Find accounting firms in Gothenburg municipality started in the last five years.
 
 ## Support
 
