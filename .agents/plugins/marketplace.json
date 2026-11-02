@@ -1,0 +1,20 @@
+{
+  "name": "firmafakta",
+  "interface": {
+    "displayName": "Firmafakta"
+  },
+  "plugins": [
+    {
+      "name": "firmafakta",
+      "source": {
+        "source": "local",
+        "path": "./plugins/agent-plugins/firmafakta"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_USE"
+      },
+      "category": "Business & Operations"
+    }
+  ]
+}

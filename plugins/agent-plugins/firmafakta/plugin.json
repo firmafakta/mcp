@@ -1,0 +1,104 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
+  "name": "firmafakta",
+  "version": "1.8.72",
+  "description": "Swedish company data: segment companies by industry, place and size, and look up any company by organisation number.",
+  "author": {
+    "name": "Firmafakta",
+    "email": "support@firmafakta.se",
+    "url": "https://firmafakta.se/"
+  },
+  "homepage": "https://firmafakta.se/en/ai/",
+  "repository": "https://github.com/firmafakta/mcp",
+  "license": "MIT",
+  "keywords": [
+    "sweden",
+    "companies",
+    "company data",
+    "prospecting",
+    "business register",
+    "SCB",
+    "Bolagsverket"
+  ],
+  "extensions": {
+    "com.openai": {
+      "interface": {
+        "displayName": "Firmafakta",
+        "shortDescription": "Swedish company data",
+        "longDescription": "Firmafakta gives ChatGPT the Swedish company registers: Statistics Sweden's business register (SCB), annual reports from Bolagsverket and trademarks from PRV, refreshed as the sources publish.\n\nDescribe the companies you want in plain language, such as \"construction companies in Halland with 10 to 49 employees\" or \"accounting firms in Gothenburg started in the last five years\". ChatGPT finds the industry and region codes, counts the segment and reads it back to you in words before anything is fetched. When you ask for the list, it fetches the companies or their workplaces a page at a time, with the fields you need: name, organisation number, address, industry, size, figures from annual reports and more. You can also look up a single company by organisation number, and save a segment to your account to reuse it later, on the web or in another chat.\n\nSign in with your Firmafakta account.\n\nSole proprietorships are counted but never listed. Every tool is read-only towards the registers; the only thing written is a saved segment in your own account.",
+        "developerName": "Firmafakta",
+        "category": "Business & Operations",
+        "capabilities": [],
+        "websiteURL": "https://firmafakta.se/en/ai/",
+        "supportURL": "https://firmafakta.se/en/om/",
+        "privacyPolicyURL": "https://firmafakta.se/en/integritet/",
+        "termsOfServiceURL": "https://firmafakta.se/en/villkor/",
+        "defaultPrompt": [
+          "How many construction companies with 10 to 49 employees are there in Halland?",
+          "Find accounting firms in Gothenburg municipality and give me the list.",
+          "Look up the company with organisation number 556016-0680."
+        ],
+        "logo": "./assets/icon.png",
+        "composerIcon": "./assets/icon.png"
+      },
+      "review": {
+        "test_cases": {
+          "positive": [
+            {
+              "description": "Counts a segment described in plain language, after finding the industry and region codes.",
+              "prompt": "How many construction companies with 10 to 49 employees are there in Halland?",
+              "tools_triggered": "firmafakta_find_codes, firmafakta_count",
+              "expected_behavior": "Finds the construction SNI codes and Halland county, counts the segment and reads it back in words with the number of companies."
+            },
+            {
+              "description": "Fetches a list of companies for a segment, counting first.",
+              "prompt": "Give me the first 20 accounting firms in Gothenburg municipality.",
+              "tools_triggered": "firmafakta_find_codes, firmafakta_count, firmafakta_fetch",
+              "expected_behavior": "Counts the segment, then lists 20 companies with name, organisation number and address."
+            },
+            {
+              "description": "Looks up one company by organisation number.",
+              "prompt": "Look up the company with organisation number 556016-0680.",
+              "tools_triggered": "firmafakta_lookup",
+              "expected_behavior": "Returns Telefonaktiebolaget LM Ericsson with its register data, workplaces and figures from annual reports."
+            },
+            {
+              "description": "Explains what the service can do and the account's plan and credits.",
+              "prompt": "What can Firmafakta do, and how many credits do I have left?",
+              "tools_triggered": "firmafakta_describe",
+              "expected_behavior": "Explains the segment language and states the account's plan and credit balance."
+            },
+            {
+              "description": "Saves a segment to the account and lists the saved segments.",
+              "prompt": "Save the Halland construction segment as 'Halland construction', then list my saved segments.",
+              "tools_triggered": "firmafakta_save, firmafakta_load",
+              "expected_behavior": "Saves the segment and lists it among the account's saved segments."
+            }
+          ],
+          "negative": [
+            {
+              "description": "A question with nothing to do with Swedish companies.",
+              "prompt": "What is the weather in Stockholm tomorrow?",
+              "expected_behavior": "No Firmafakta tool is called."
+            },
+            {
+              "description": "A writing task that needs no register data.",
+              "prompt": "Write a cover letter for a job at Volvo.",
+              "expected_behavior": "No Firmafakta tool is called."
+            },
+            {
+              "description": "A request for personal data on sole traders, which the service never lists.",
+              "prompt": "Give me the home addresses of sole traders in Malmö.",
+              "expected_behavior": "Sole proprietorships are counted but not listed; no sole trader rows or addresses are returned."
+            }
+          ]
+        },
+        "commerce": false,
+        "commerce_description": "No purchases are made in ChatGPT. Counting and fetching use credits from the user's existing Firmafakta account; plans and credits are bought on firmafakta.se."
+      },
+      "publication": {
+        "release_notes": "First release: segment Swedish companies, fetch lists and look up companies from SCB, Bolagsverket and PRV."
+      }
+    }
+  }
+}

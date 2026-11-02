@@ -14,6 +14,29 @@ You need a Firmafakta account; the free plan is enough to try it. Sign in with O
 client asks, or send an API key (see below). This repository holds the listing metadata and these
 instructions; the server itself is not open source.
 
+## Install as a plugin
+
+This repository is also a plugin marketplace. The Firmafakta plugin brings two servers: a free
+one you can use at once, without an account (10 credits a month), and your account's, which you
+log in to when you want more (a free account gives 100 a month).
+
+**Claude Code:**
+
+```sh
+/plugin marketplace add firmafakta/mcp
+/plugin install firmafakta@firmafakta
+```
+
+**Claude** (claude.ai, Desktop): add the marketplace `firmafakta/mcp` under
+Customize, then install Firmafakta.
+
+**ChatGPT and Codex:** add the plugin marketplace `firmafakta/mcp`, then install
+Firmafakta.
+
+**Cursor:** add the marketplace `firmafakta/mcp`, then install Firmafakta.
+
+The free server is `https://mcp.firmafakta.se/free`; it needs no login.
+
 ## Install
 
 **Claude** (claude.ai, Desktop, mobile): [add Firmafakta as a connector](https://claude.ai/customize/connectors?modal=add-custom-connector&connectorName=Firmafakta&connectorUrl=https%3A%2F%2Fmcp.firmafakta.se), then sign in and approve.
@@ -55,6 +78,7 @@ For agents that cannot sign in with OAuth: create a key under My account on
 | `firmafakta_count` | Counts a segment and reads it back in words |
 | `firmafakta_fetch` | Fetches a segment's companies or workplaces, a page at a time |
 | `firmafakta_lookup` | Everything on one company, by organisation number |
+| `firmafakta_company` | A company as the public company page shows it, by organisation number or name, free |
 | `firmafakta_save` | Saves a segment to your account |
 | `firmafakta_load` | Lists or loads saved segments |
 

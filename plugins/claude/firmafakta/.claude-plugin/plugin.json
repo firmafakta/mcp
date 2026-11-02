@@ -1,0 +1,22 @@
+{
+  "name": "firmafakta",
+  "version": "1.8.72",
+  "description": "Swedish company data: segment companies by industry, place and size, and look up any company by organisation number. Free without an account; log in for more.",
+  "author": {
+    "name": "Firmafakta",
+    "email": "support@firmafakta.se",
+    "url": "https://firmafakta.se/"
+  },
+  "homepage": "https://firmafakta.se/en/ai/",
+  "repository": "https://github.com/firmafakta/mcp",
+  "privacyPolicyUrl": "https://firmafakta.se/en/integritet/",
+  "license": "MIT",
+  "keywords": [
+    "sweden",
+    "companies",
+    "company data",
+    "business register",
+    "SCB",
+    "Bolagsverket"
+  ]
+}

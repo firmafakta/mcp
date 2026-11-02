@@ -1,0 +1,16 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.0.0/mcp.schema.json",
+  "mcpServers": {
+    "firmafakta-free": {
+      "type": "streamable-http",
+      "url": "https://mcp.firmafakta.se/free",
+      "auth": {
+        "type": "none"
+      }
+    },
+    "firmafakta": {
+      "type": "streamable-http",
+      "url": "https://mcp.firmafakta.se"
+    }
+  }
+}

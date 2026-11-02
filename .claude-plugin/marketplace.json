@@ -1,0 +1,16 @@
+{
+  "name": "firmafakta",
+  "owner": {
+    "name": "Firmafakta",
+    "email": "support@firmafakta.se"
+  },
+  "description": "Firmafakta's plugins for AI assistants.",
+  "plugins": [
+    {
+      "name": "firmafakta",
+      "source": "./plugins/claude/firmafakta",
+      "description": "Swedish company data: segment companies by industry, place and size, and look up any company by organisation number. Free without an account; log in for more.",
+      "version": "1.8.72"
+    }
+  ]
+}
