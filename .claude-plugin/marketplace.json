@@ -10,7 +10,7 @@
       "name": "firmafakta",
       "source": "./plugins/claude/firmafakta",
       "description": "Swedish company data: segment companies by industry, place and size, and look up any company by organisation number. Sign in with your Firmafakta account.",
-      "version": "1.10.19"
+      "version": "1.10.20"
     }
   ]
 }
